@@ -11,7 +11,7 @@ const SideBar = () => {
         <span>Services</span>
         <span>Resume</span>
       </section>
-      <section className="contact-item md:hidden flex ">Contact Me</section>
+      <section className="contact-item md:hidden flex">Contact Me</section>
     </div>
   );
 };

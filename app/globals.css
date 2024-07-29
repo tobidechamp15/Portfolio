@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Oleo+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Oleo+Script&family=Poppins&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -20,6 +20,7 @@
   padding: 0px;
   gap: 50px;
 }
+
 .nav-items span {
   font-family: "Montserrat";
   font-style: normal;
@@ -28,12 +29,12 @@
   line-height: 22px;
   color: #c1c1c1;
 }
+
 .nav-items span:hover {
   font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
   color: #4fc3f7;
 }
 
@@ -95,4 +96,68 @@
 
 .hamburgerMenu:hover .bar {
   transform: scaleX(1.1);
+}
+
+.bg-img {
+  /* background: url("../public/assets/hero-bg.svg"); */
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 63px;
+  line-height: 94px;
+  /* identical to box height */
+  letter-spacing: -0.06em;
+
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+}
+
+.job-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  background: linear-gradient(90.54deg, #4fc3f7 0.46%, #ffffff 91.25%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.job-des {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 30px;
+  /* or 214% */
+  text-align: center;
+  max-width: 600px;
+  color: #e1e1e1;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-items {
+    display: none;
+  }
+
+  .hero-name {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 63px;
+    letter-spacing: -0.06em;
+    color: #ffffff;
+  }
 }
