@@ -26,7 +26,7 @@ const NavBar = () => {
         Contact Me
       </section>
       <div
-        className={`hamburgerMenu flex md:hidden ${isActive ? "active" : ""}`}
+        className={`hamburgerMenu z-10 flex md:hidden ${isActive ? "active fixed" : ""}`}
         onClick={toggleMenu}
       >
         <div className="bar"></div>
