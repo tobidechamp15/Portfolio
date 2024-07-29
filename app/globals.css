@@ -73,6 +73,7 @@
 .hamburgerMenu .bar:nth-child(1) {
   width: 35%;
 }
+
 .hamburgerMenu.active .bar:nth-child(1) {
   width: 100%;
   transform: rotate(45deg) translateY(15px);
@@ -86,8 +87,9 @@
   width: 35%;
   align-self: end;
 }
+
 .hamburgerMenu.active .bar:nth-child(3) {
-    width: 100%;
+  width: 100%;
   transform: rotate(-45deg) translateY(-15px);
 }
 

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import "../app/globals.css"; // Correct path to your global CSS
+import SideBar from "./SideBar";
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -12,6 +13,7 @@ const NavBar = () => {
 
   return (
     <div className="flex justify-between xsm:px-[30px] md:justify-evenly items-center py-[30px]">
+      {isActive && <SideBar />}
       <span className="logoStyle">Tobiloba</span>
       <section className="md:flex hidden nav-items">
         <span>Home</span>
