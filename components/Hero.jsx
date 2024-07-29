@@ -4,7 +4,7 @@ import avatar from "../public/assets/avatar.svg";
 
 const Hero = () => {
   return (
-    <div className="container h-screen items-center justify-center flex flex-col bg-hero-bg bg-no-repeat bg-cover bg-center ">
+    <div className="container min-h-screen items-center justify-center xsm:pt-[50px] xsm:mb-[190px] flex flex-col bg-hero-bg bg-no-repeat bg-cover bg-center xsm:px-[25px]">
       <Image src={avatar} />
       <span className="hero-name text-center">Oluwadare Oluwatobiloba</span>
       <span className="job-title">Software Engineer</span>
