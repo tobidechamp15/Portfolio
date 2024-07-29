@@ -12,7 +12,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex justify-between xsm:px-[30px] md:justify-evenly items-center py-[30px]">
+    <div className="flex justify-between xsm:px-[30px] md:justify-evenly items-center py-[30px] w-full">
       {isActive && <SideBar />}
       <span className="logoStyle">Tobiloba</span>
       <section className="md:flex hidden nav-items">
@@ -22,7 +22,9 @@ const NavBar = () => {
         <span>Services</span>
         <span>Resume</span>
       </section>
-      <section className="contact-item hidden md:flex ">Contact Me</section>
+      <section className="contact-item hidden md:flex transition duration-300 ease-in-out transform hover:bg-[#4FC3F7] hover:scale-105 hover:text-black">
+        Contact Me
+      </section>
       <div
         className={`hamburgerMenu flex md:hidden ${isActive ? "active" : ""}`}
         onClick={toggleMenu}
