@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Oleo+Script&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logoStyle {
+  font-family: "Oleo Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-items {
+  align-items: flex-start;
+  padding: 0px;
+  gap: 50px;
+}
+.nav-items span {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #c1c1c1;
+}
+.nav-items span:hover {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #4fc3f7;
+}
+
+.contact-item {
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  border: 1px solid #4fc3f7;
+  border-radius: 9px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.hamburgerMenu {
+  flex-direction: column;
+  width: 40px;
+  height: 30px;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+}
+
+.bar {
+  background-color: #ffffff;
+  height: 4px;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.hamburgerMenu .bar:nth-child(1) {
+  width: 35%;
+}
+.hamburgerMenu.active .bar:nth-child(1) {
+  width: 100%;
+  transform: rotate(45deg) translateY(15px);
+}
+
+.hamburgerMenu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerMenu .bar:nth-child(3) {
+  width: 35%;
+  align-self: end;
+}
+.hamburgerMenu.active .bar:nth-child(3) {
+    width: 100%;
+  transform: rotate(-45deg) translateY(-15px);
+}
+
+.hamburgerMenu:hover .bar {
+  transform: scaleX(1.1);
+}
