@@ -26,9 +26,15 @@ const Footer = () => {
       <div className=" flex justify-around w-full my-[36px]">
         <span className="reserved">@2024 all rights reserved.</span>
         <div className="flex gap-3 items-center">
-          <Image src={linkedinIcon} />
-          <Image src={instaIcon} />
-          <Image src={twitIcon} />
+          <a href="https://www.linkedin.com/in/tobiloba-emmanuel-4bba71249/">
+            <Image src={linkedinIcon} />
+          </a>
+          <a href="https://www.instagram.com/de_champ__/">
+            <Image src={instaIcon} />
+          </a>
+          <a href="https://x.com/tobidechamp15">
+            <Image src={twitIcon} />
+          </a>
         </div>
       </div>
     </>
