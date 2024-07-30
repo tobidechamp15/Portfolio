@@ -1,3 +1,5 @@
+"use client";
+
 import NavBar from "@/components/NavBar";
 import React from "react";
 import "./globals.css";
