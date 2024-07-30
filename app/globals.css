@@ -20,6 +20,7 @@
   padding: 0px;
   gap: 50px;
 }
+
 .side-items {
   align-items: flex-start;
   padding: 0px;
@@ -42,6 +43,7 @@
   transition: transform 0.3s ease;
   color: #4fc3f7;
 }
+
 .side-items span {
   font-family: "Montserrat";
   font-style: normal;
@@ -84,6 +86,7 @@
   cursor: pointer;
   position: relative;
 }
+
 .hamburgerMenu.active {
   position: fixed;
   right: 0;
@@ -209,6 +212,7 @@
   border: 1px solid #2b2b2b;
   border-radius: 10px;
 }
+
 .service-name {
   font-family: "Inter";
   font-style: normal;
@@ -245,6 +249,29 @@
   font-size: 16px;
   line-height: 150%;
 
+  color: #a9a9a9;
+}
+
+.img-container {
+  width: 365px !important;
+  height: 200px !important;
+}
+
+.project-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #c1c1c1;
+}
+
+.project-tech {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
   color: #a9a9a9;
 }
 
