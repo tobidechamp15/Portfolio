@@ -197,6 +197,36 @@
   text-fill-color: transparent;
 }
 
+.service-card {
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    121.9deg,
+    rgba(28, 28, 28, 0.5) 0%,
+    #050505 96.81%
+  );
+  mix-blend-mode: plus-lighter;
+  border: 1px solid #2b2b2b;
+  border-radius: 10px;
+}
+.service-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 120%;
+  color: #ffffff;
+}
+
+.service-desc {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #e1e1e1;
+}
+
 @media screen and (max-width: 768px) {
   .nav-items {
     display: none;
