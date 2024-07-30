@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="flex flex-col gap-[40px] items-center mb-[40px] xsm:px-[25px] mb-[190px]">
+    <div className="flex flex-col gap-[40px] items-center xsm:px-[25px] mb-[190px]">
       <div className="flex flex-col items-center justify-center">
         <span className="sub-head ">About me</span>
         <span className="sub-des ">Get to know me</span>

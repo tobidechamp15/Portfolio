@@ -8,7 +8,7 @@ import supportIcon from "../public/assets/supportIcon.png";
 
 const Services = () => {
   return (
-    <div className="flex flex-col gap-[40px] items-center mb-[40px] xsm:px-[25px]">
+    <div className="flex flex-col gap-[40px] items-center mb-[190px] xsm:px-[25px]">
       <div className="flex flex-col items-center justify-center">
         <span className="sub-head ">What I do</span>
         <span className="sub-des ">My Services</span>
