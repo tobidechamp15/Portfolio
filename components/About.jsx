@@ -64,7 +64,7 @@ const About = () => {
         </motion.span>
       </div>
       <a
-        href="../public/cv/Oluwatobiloba-Oluwadare Resume.pdf"
+        href="/cv/Oluwatobiloba-Oluwadare Resume.pdf"
         download="resume.pdf"
         whileHover={{ scale: 1.05, backgroundColor: "#4FC3F7", color: "#000" }}
         className="font-[Montserrat] w-fit my-3 border text-white cursor-pointer border-[#4FC3F7] py-[18px] px-[50px] rounded-[75px] transition duration-300 ease-in-out"
