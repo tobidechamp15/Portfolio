@@ -23,8 +23,8 @@ const About = () => {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "cv/Oluwatobiloba-Oluwadare Resume.pdf"; // Update with the actual path to your CV file
-    link.download = "xOluwatobiloba-Oluwadare Resume.pdf"; // Update with the desired file name
+    link.href = "cv/"; // Update with the actual path to your CV file
+    link.download = "Oluwatobiloba-Oluwadare Resume.pdf"; // Update with the desired file name
     link.click();
   };
 
