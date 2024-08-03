@@ -21,13 +21,6 @@ const About = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
-  const downloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "../public/cv/Oluwatobiloba-Oluwadare Resume.pdf"; // Update with the actual path to your CV file
-    link.download = "Oluwatobiloba-Oluwadare Resume.pdf"; // Update with the desired file name
-    link.click();
-  };
-
   return (
     <motion.div
       ref={ref}
@@ -70,13 +63,14 @@ const About = () => {
           start unlocking the power of technology for your business today!
         </motion.span>
       </div>
-      <motion.span
+      <a
+        href="../public/cv/Oluwatobiloba-Oluwadare Resume.pdf"
+        download="resume.pdf"
         whileHover={{ scale: 1.05, backgroundColor: "#4FC3F7", color: "#000" }}
-        onClick={downloadCV}
         className="font-[Montserrat] w-fit my-3 border text-white cursor-pointer border-[#4FC3F7] py-[18px] px-[50px] rounded-[75px] transition duration-300 ease-in-out"
       >
         Download CV
-      </motion.span>
+      </a>
     </motion.div>
   );
 };
