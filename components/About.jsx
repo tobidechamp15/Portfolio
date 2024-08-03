@@ -63,14 +63,32 @@ const About = () => {
           start unlocking the power of technology for your business today!
         </motion.span>
       </div>
-      <a
-        href="/cv/Oluwatobiloba-Oluwadare Resume.pdf"
-        download="resume.pdf"
-        whileHover={{ scale: 1.05, backgroundColor: "#4FC3F7", color: "#000" }}
-        className="font-[Montserrat] w-fit my-3 border text-white cursor-pointer border-[#4FC3F7] py-[18px] px-[50px] rounded-[75px] transition duration-300 ease-in-out"
-      >
-        Download CV
-      </a>
+      <div className="flex flex-wrap gap-4">
+        <motion.a
+          href="/cv/Oluwatobiloba-Oluwadare Resume.pdf" // Correct path
+          target="_blank" // Opens in a new tab
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: "#4FC3F7",
+            color: "#000",
+          }}
+          className="font-[Montserrat] w-fit my-3 border text-white cursor-pointer border-[#4FC3F7] py-[18px] px-[50px] rounded-[75px] transition duration-300 ease-in-out"
+        >
+          View CV
+        </motion.a>
+        <motion.a
+          href="/cv/Oluwatobiloba-Oluwadare Resume.pdf" // Correct path
+          download="Oluwatobiloba-Oluwadare_Resume.pdf"
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: "#4FC3F7",
+            color: "#000",
+          }}
+          className="font-[Montserrat] w-fit my-3 border text-white cursor-pointer border-[#4FC3F7] py-[18px] px-[50px] rounded-[75px] transition duration-300 ease-in-out"
+        >
+          Download CV
+        </motion.a>
+      </div>
     </motion.div>
   );
 };
