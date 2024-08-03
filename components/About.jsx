@@ -26,6 +26,7 @@ const About = () => {
     link.href = "../public/cv/Oluwatobiloba-Oluwadare Resume.pdf"; // Update with the actual path to your CV file
     link.download = "Oluwatobiloba-Oluwadare Resume.pdf"; // Update with the desired file name
     link.click();
+    console.log("object");
   };
 
   return (
