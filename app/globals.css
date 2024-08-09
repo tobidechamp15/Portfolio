@@ -289,8 +289,7 @@ textarea {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  font-size: 63px;
-  line-height: 106%;
+  font-size: 30px;
   letter-spacing: 0.07em;
   text-transform: capitalize;
   color: #dedede;
@@ -300,7 +299,7 @@ textarea {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 24.8958px;
+  font-size: 15px;
   line-height: 149.02%;
   text-align: justify;
   color: #c9c9c9;
@@ -316,6 +315,11 @@ textarea {
   color: #a9a9a9;
 }
 
+@media screen and (max-width: 450px) {
+  .gmail {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   .nav-items {
     display: none;
@@ -339,7 +343,7 @@ textarea {
     font-family: "Inter";
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 106%;
     letter-spacing: 0.07em;
     text-transform: capitalize;

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import avatar from "../public/assets/avatar.svg";
+import avatar from "../public/assets/profile.jpg";
 
 const Hero = () => {
   const controls = useAnimation();
@@ -31,7 +31,7 @@ const Hero = () => {
       variants={heroVariants}
       className="container min-h-screen items-center justify-center xsm:pt-[50px] xsm:mb-[190px] flex flex-col bg-hero-bg bg-no-repeat bg-cover bg-center xsm:px-[25px]"
     >
-      <Image src={avatar} alt="Avatar" />
+      <Image src={avatar} alt="Avatar" className="rounded-full w-[202px]" />
       <span className="hero-name text-center">Oluwadare Oluwatobiloba</span>
       <span className="job-title">Software Engineer</span>
       <span className="job-des text-center">
