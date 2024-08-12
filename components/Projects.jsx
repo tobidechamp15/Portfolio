@@ -58,14 +58,14 @@ const Projects = () => {
       <div className="flex mt-[50px] gap-3 flex-wrap max-w-[1200px] justify-center">
         {[
           {
-            href: "https://run-ride.netlify.app",
+            href: "https://run-ride.vercel.app/",
             src: runRideImg,
             alt: "Run-Ride project screenshot",
             name: "Run-Ride",
             tech: "React | Firebase | GitHub",
           },
           {
-            href: "https://taskify.netlify.app",
+            href: "https://taskify-tobiloba.vercel.app/",
             src: taskify,
             alt: "Taskify project screenshot",
             name: "Taskify",
@@ -79,7 +79,7 @@ const Projects = () => {
             tech: "React | Firebase | Bootstrap",
           },
           {
-            href: "https://thrift4all.netlify.app",
+            href: "https://thrift4all.vercel.app/",
             src: thrift4all,
             alt: "Thrift4all project screenshot",
             name: "Thrift4all",
