@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +9,7 @@ const Contact = () => {
   const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
+    setSuccess(false);
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
