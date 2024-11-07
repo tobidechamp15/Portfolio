@@ -7,6 +7,7 @@ import taskify from "../public/assets/taskifyImg.jpg";
 import invoiceXpress from "../public/assets/invoicexpressImg.png";
 import thrift4all from "../public/assets/thrift4allmg.png";
 import send from "../public/assets/send.svg";
+import trendMart from "../public/assets/trendMart.svg";
 
 const projectVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -85,6 +86,13 @@ const Projects = () => {
             name: "Thrift4all",
             tech: "React | Tailwindcss | GitHub",
           },
+          {
+            href: "https://trendmart-tobiloba.netlify.app/",
+            src: trendMart,
+            alt: "TrendMart project screenshot",
+            name: "Trend Mart",
+            tech: "React | Tailwindcss | GitHub",
+          },
         ].map((project, index) => (
           <motion.a
             key={index}
@@ -97,7 +105,7 @@ const Projects = () => {
             <div className="img-container overflow-hidden rounded-lg">
               <Image
                 src={project.src}
-                className="w-full h-full object-cover transition duration-300 transform group-hover:scale-110"
+                className="w-full h-full object-cover transition duration-300 transform group-hover:scale-110 min-w-[365px]"
                 alt={project.alt}
               />
             </div>
