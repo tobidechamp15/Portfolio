@@ -65,7 +65,7 @@ const About = () => {
       </div>
       <div className="flex flex-wrap gap-4">
         <motion.a
-          href="/cv/Oluwatobiloba-Oluwadare Resume.pdf" // Correct path
+          href="/cv/Oluwatobiloba-Oluwadare CV.pdf" // Correct path
           target="_blank" // Opens in a new tab
           whileHover={{
             scale: 1.05,
