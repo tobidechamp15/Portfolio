@@ -4,6 +4,7 @@ import gmailIcon from "../public/assets/gmailIcon.svg";
 import linkedinIcon from "../public/assets/linkedinIcon.svg";
 import instaIcon from "../public/assets/instaIcon.svg";
 import twitIcon from "../public/assets/twitIcon.svg";
+import githubIcon from "../public/assets/githubIcon.svg";
 
 const Footer = () => {
   return (
@@ -34,6 +35,12 @@ const Footer = () => {
           </a>
           <a href="https://x.com/tobidechamp15">
             <Image src={twitIcon} />
+          </a>
+          <a
+            href="https://github.com/tobidechamp15"
+            style={{ clipPath: "circle(50% at 50% 50%)" }}
+          >
+            <Image src={githubIcon} className="w-[32px] bg-[#aeb0b4]" />
           </a>
         </div>
       </div>
