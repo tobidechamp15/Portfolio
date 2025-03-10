@@ -77,8 +77,8 @@ const About = () => {
           View CV
         </motion.a>
         <motion.a
-          href="/cv/Oluwatobiloba-Oluwadare Resume.pdf" // Correct path
-          download="Oluwatobiloba-Oluwadare_Resume.pdf"
+          href="/cv/Oluwatobiloba-Oluwadare CV.pdf" // Correct path
+          download="Oluwatobiloba-Oluwadare CV.pdf"
           whileHover={{
             scale: 1.05,
             backgroundColor: "#4FC3F7",
