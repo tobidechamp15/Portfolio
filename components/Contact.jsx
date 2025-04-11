@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const Contact = () => {
     message: "",
   });
   const [success, setSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setSuccess(false);
@@ -16,8 +18,8 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Handle form submission (e.g., send data to an API or email service)
     try {
       await fetch("/api/contact", {
         method: "POST",
@@ -27,72 +29,83 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
       setSuccess(true);
-      setFormData({ name: "", email: "", message: "" }); // Clear form
+      setFormData({ name: "", email: "", message: "" });
+      setIsSubmitting(false); // Reset submission state
     } catch (error) {
       console.error("Error:", error);
+      setIsSubmitting(false);
     }
   };
 
+  const formVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
-    <div className="flex flex-col gap-[40px] items-center mb-[190px] xsm:px-[25px] w-full ">
-      <div className="flex flex-col items-center justify-center">
-        <span className="sub-head ">Get in Touch</span>
-        <span className="sub-des ">Let us work together</span>
-      </div>
+    <div className="flex flex-col gap-[40px] items-center mb-[190px] xsm:px-[25px] w-full">
+      <motion.div
+        className="flex flex-col items-center justify-center"
+        initial="hidden"
+        animate="visible"
+        variants={formVariants}
+      >
+        <span className="sub-head">Get in Touch</span>
+        <span className="sub-des">Let us work together</span>
+      </motion.div>
+
       {success && (
-        <p className="text-green-500 mb-4">Your message has been sent!</p>
+        <motion.p
+          className="text-green-500 mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          Your message has been sent!
+        </motion.p>
       )}
-      <form
+
+      <motion.form
         className="max-w-[690px] w-full flex flex-col gap-4"
         onSubmit={handleSubmit}
+        initial="hidden"
+        animate="visible"
+        variants={formVariants}
       >
-        <div className="flex flex-col gap-2">
-          <label htmlFor="name" className="text-white font-semibold">
-            Name
-          </label>
-          <input
-            type="text"
-            required
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="p-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 transition duration-300 ease-in-out shadow-sm placeholder-gray-400"
-            placeholder="Enter your name"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-white font-semibold">
-            Email
-          </label>
-          <input
-            type="email"
-            required
-            value={formData.email}
-            onChange={handleChange}
-            id="email"
-            name="email"
-            className="p-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 transition duration-300 ease-in-out shadow-sm placeholder-gray-400"
-            placeholder="Enter your email"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-white font-semibold">
-            Message
-          </label>
-          <textarea
-            id="message"
-            required
-            value={formData.message}
-            onChange={handleChange}
-            name="message"
-            className="h-[222px] p-3 bg-transparent rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 transition duration-300 ease-in-out shadow-sm placeholder-gray-400"
-            placeholder="Enter your message"
-          />
-        </div>
-        <button
+        {["name", "email", "message"].map((field) => (
+          <div key={field} className="flex flex-col gap-2">
+            <label htmlFor={field} className="text-white font-semibold">
+              {field.charAt(0).toUpperCase() + field.slice(1)}
+            </label>
+            {field === "message" ? (
+              <textarea
+                id={field}
+                required
+                value={formData[field]}
+                onChange={handleChange}
+                name={field}
+                className="h-[222px] p-3 bg-transparent rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 transition duration-300 ease-in-out shadow-sm placeholder-gray-400"
+                placeholder={`Enter your ${field}`}
+              />
+            ) : (
+              <input
+                type={field === "email" ? "email" : "text"}
+                required
+                value={formData[field]}
+                onChange={handleChange}
+                id={field}
+                name={field}
+                className="p-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 transition duration-300 ease-in-out shadow-sm placeholder-gray-400"
+                placeholder={`Enter your ${field}`}
+              />
+            )}
+          </div>
+        ))}
+        <motion.button
           type="submit"
           className="relative w-fit self-center inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-300 transition duration-300 ease-out border-2 border-blue-300 rounded-full shadow-md group"
+          whileTap={{ scale: 0.95 }}
+          disabled={isSubmitting}
         >
           <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-300 group-hover:translate-x-0 ease">
             <svg
@@ -111,11 +124,22 @@ const Contact = () => {
             </svg>
           </span>
           <span className="absolute flex items-center justify-center w-full h-full text-blue-300 transition-all duration-300 transform group-hover:translate-x-full ease">
-            Get in Touch
+            {isSubmitting ? "Submitting..." : "Get in Touch"}
           </span>
           <span className="relative invisible">Get in Touch</span>
-        </button>
-      </form>
+        </motion.button>
+      </motion.form>
+
+      {success && (
+        <motion.div
+          className="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-2 rounded-lg shadow-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          Message Sent Successfully!
+        </motion.div>
+      )}
     </div>
   );
 };
