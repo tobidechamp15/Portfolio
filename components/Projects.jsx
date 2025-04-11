@@ -8,6 +8,8 @@ import invoiceXpress from "../public/assets/invoicexpressImg.png";
 import thrift4all from "../public/assets/thrift4allmg.png";
 import send from "../public/assets/send.svg";
 import trendMart from "../public/assets/trendMart.svg";
+import turnUpLagos from "../public/assets/turnuplagos.png";
+import theWorkNub from "../public/assets/theworknub.png";
 
 const projectVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -91,7 +93,21 @@ const Projects = () => {
             src: trendMart,
             alt: "TrendMart project screenshot",
             name: "Trend Mart",
-            tech: "React | Tailwindcss | GitHub",
+            tech: "NextJs | Tailwindcss | NextAuth | MongoDB",
+          },
+          {
+            href: "https://turnuplagos.netlify.app/",
+            src: turnUpLagos,
+            alt: "Turnuplagos project screenshot",
+            name: "Turn Up Lagos",
+            tech: "React | Tailwindcss | GitHub | Firebase",
+          },
+          {
+            href: "https://turnuplagos.netlify.app/",
+            src: theWorkNub,
+            alt: "Turnuplagos project screenshot",
+            name: "The Work Nub",
+            tech: "NextJs | Tailwindcss | GitHub",
           },
         ].map((project, index) => (
           <motion.a
