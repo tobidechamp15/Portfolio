@@ -96,18 +96,20 @@ const Projects = () => {
             tech: "NextJs | Tailwindcss | NextAuth | MongoDB",
           },
           {
-            href: "https://turnuplagos.netlify.app/",
+            href: "https://eventspulse.netlify.app/",
             src: turnUpLagos,
             alt: "Turnuplagos project screenshot",
-            name: "Turn Up Lagos",
+            name: "Events Pulse",
             tech: "React | Tailwindcss | GitHub | Firebase",
           },
           {
+            /* {
             href: "https://turnuplagos.netlify.app/",
             src: theWorkNub,
             alt: "Turnuplagos project screenshot",
             name: "The Work Nub",
             tech: "NextJs | Tailwindcss | GitHub",
+          }, */
           },
         ].map((project, index) => (
           <motion.a
