@@ -102,15 +102,13 @@ const Projects = () => {
             name: "Events Pulse",
             tech: "React | Tailwindcss | GitHub | Firebase",
           },
-          {
-            /* {
-            href: "https://turnuplagos.netlify.app/",
-            src: theWorkNub,
-            alt: "Turnuplagos project screenshot",
-            name: "The Work Nub",
-            tech: "NextJs | Tailwindcss | GitHub",
-          }, */
-          },
+          //   {
+          //   href: "https://turnuplagos.netlify.app/",
+          //  src: theWorkNub,
+          // alt: "Turnuplagos project screenshot",
+          // name: "The Work Nub",
+          //   tech: "NextJs | Tailwindcss | GitHub",
+          // },
         ].map((project, index) => (
           <motion.a
             key={index}
