@@ -27,7 +27,7 @@ const Footer = () => {
       <div className=" flex flex-wrap justify-around w-full my-[36px]">
         <span className="reserved">@2024 all rights reserved.</span>
         <div className="flex gap-3 items-center">
-          <a href="https://www.linkedin.com/in/tobiloba-emmanuel-4bba71249/">
+          <a href="https://www.linkedin.com/in/oluwatobiloba-oluwadare-ab317b365/">
             <Image src={linkedinIcon} />
           </a>
           <a href="https://www.instagram.com/de_champ__/">
