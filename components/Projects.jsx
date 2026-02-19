@@ -10,6 +10,7 @@ import send from "../public/assets/send.svg";
 import trendMart from "../public/assets/trendMart.svg";
 import turnUpLagos from "../public/assets/turnuplagos.png";
 import theWorkNub from "../public/assets/theworknub.png";
+import esms from "../public/assets/esms.jpeg";
 
 const projectVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -82,11 +83,11 @@ const Projects = () => {
             tech: "React | Firebase | Bootstrap",
           },
           {
-            href: "https://thrift4all.vercel.app/",
-            src: thrift4all,
-            alt: "Thrift4all project screenshot",
-            name: "Thrift4all",
-            tech: "React | Tailwindcss | GitHub",
+            href: "https://estate-management-system.vercel.app/",
+            src: esms,
+            alt: "ESMS picture",
+            name: "ESMS",
+            tech: "NextJS | MongoDB | Tailwindcss | GitHub",
           },
           {
             href: "https://trendmart-tobiloba.netlify.app/",
@@ -98,7 +99,7 @@ const Projects = () => {
           {
             href: "https://eventspulse.netlify.app/",
             src: turnUpLagos,
-            alt: "Turnuplagos project screenshot",
+            alt: "Turnuplagos project picture",
             name: "Events Pulse",
             tech: "React | Tailwindcss | GitHub | Firebase",
           },
