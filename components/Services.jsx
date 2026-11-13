@@ -1,108 +1,43 @@
-import React, { useEffect } from "react";
-import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+"use client";
 
-import webDevIcon from "../public/assets/web-dev-icon.png";
-import cloudIcon from "../public/assets/cloudIcon.png";
-import databaseIcon from "../public/assets/databaseIcon.png";
-import optIcon from "../public/assets/optIcon.png";
-import supportIcon from "../public/assets/supportIcon.png";
+import React from "react";
+import Reveal from "./Reveal";
+import { services } from "@/data/portfolio";
 
-const services = [
-  {
-    icon: webDevIcon,
-    title: "Custom Software Development",
-    description:
-      "Creating bespoke software solutions tailored to meet specific business needs",
-  },
-  {
-    icon: cloudIcon,
-    title: "Cloud Computing Solutions",
-    description:
-      "Implementing cloud-based solutions for scalable and secure data storage and processing.",
-  },
-  {
-    icon: databaseIcon,
-    title: "Database Design and Management",
-    description:
-      "Designing and managing relational and non-relational databases for efficient data storage and retrieval.",
-  },
-  {
-    icon: optIcon,
-    title: "Performance Optimization",
-    description:
-      "Analyzing and optimizing software performance to improve speed, scalability, and efficiency.",
-  },
-  {
-    icon: supportIcon,
-    title: "Software Maintenance and Support",
-    description:
-      "Providing ongoing maintenance and support for existing software applications to ensure they run smoothly.",
-  },
+// One icon set: 18px, 1.5 stroke, in the muted text colour.
+const icons = [
+  <path key="web" d="M3 5h18v12H3zM8 21h8M12 17v4" />,
+  <path key="mobile" d="M8 2h8a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1ZM11 18h2" />,
+  <path key="api" d="M8 9 4 12l4 3M16 9l4 3-4 3M14 5l-4 14" />,
+  <path key="design" d="m4 20 4-1 11-11a2.1 2.1 0 0 0-3-3L5 16l-1 4ZM14 6l3 3" />,
 ];
 
-const parentVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      when: "beforeChildren",
-    },
-  },
-};
-
-const childVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-};
-
 const Services = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.2 });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={parentVariants}
-      className="flex flex-col gap-[40px] items-center mb-[190px] xsm:px-[25px]"
-    >
-      <motion.div
-        className="flex flex-col items-center justify-center"
-        variants={childVariants}
-      >
-        <span className="sub-head">What I do</span>
-        <span className="sub-des">My Services</span>
-      </motion.div>
+    <section id="services" className="section border-t border-white/[0.08]">
+      <div className="container-x">
+        <Reveal>
+          <p className="label">Services</p>
+          <h2 className="section-title mt-3 max-w-[560px]">What I can build for your team</h2>
+        </Reveal>
 
-      <motion.section
-        className="flex flex-wrap justify-center gap-4 max-w-[929px]"
-        variants={parentVariants}
-      >
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            variants={childVariants}
-            className="service-card gap-3 py-[29px] px-[26px] flex flex-col text-white max-w-[289px]"
-          >
-            <Image src={service.icon} alt={service.title} width={44} height={44} />
-            <span className="service-name">{service.title}</span>
-            <span className="service-desc">{service.description}</span>
-          </motion.div>
-        ))}
-      </motion.section>
-    </motion.div>
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {services.map((service, i) => (
+            <Reveal key={service.title} delay={i * 0.04}>
+              <div className="card card-hover p-6 h-full">
+                <div className="w-9 h-9 rounded-lg bg-ink-raised border border-white/[0.08] flex items-center justify-center text-ink-muted">
+                  <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    {icons[i % icons.length]}
+                  </svg>
+                </div>
+                <h3 className="mt-5 text-base font-medium text-ink-text">{service.title}</h3>
+                <p className="mt-2 text-[15px] leading-6 text-ink-text2">{service.description}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

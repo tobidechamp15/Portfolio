@@ -5,20 +5,27 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}", // Include if using the App Directory feature in Next.js 13+
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./data/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "hero-bg": "url('/assets/hero-bg.svg')",
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       fontFamily: {
-        sans: ["Roboto", "sans-serif"],
-        cursive: ["Oleo Script", "cursive"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+      },
+      colors: {
+        ink: {
+          bg: "#0b0d14",
+          deep: "#07080d",
+          card: "#11141c",
+          raised: "#1a1e28",
+          text: "#eef0f5",
+          text2: "#a3a9b8",
+          muted: "#7a8296",
+        },
+        accent: "#4FC3F7",
       },
     },
     screens: {
