@@ -1,95 +1,67 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+"use client";
+
+import React from "react";
+import Reveal from "./Reveal";
+import CountUp from "./CountUp";
+import { about, stats, profile } from "@/data/portfolio";
 
 const About = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.2, // Adjust this value to determine how much of the element should be in view before the animation starts
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  const aboutVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-  };
-
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={aboutVariants}
-      className="flex flex-col gap-[40px] items-center xsm:px-[25px] mb-[190px]"
-    >
-      <div className="flex flex-col items-center justify-center">
-        <span className="sub-head ">About me</span>
-        <span className="sub-des ">Get to know me</span>
+    <section id="about" className="section border-t border-white/[0.08]">
+      <div className="container-x">
+        <Reveal>
+          <p className="label">About</p>
+          <h2 className="section-title mt-3 max-w-[640px]">
+            Three years on banking apps and product teams, now also teaching
+          </h2>
+        </Reveal>
+
+        <div className="mt-12 grid lg:grid-cols-[1.1fr_0.9fr] gap-12">
+          <Reveal className="space-y-5">
+            {about.paragraphs.map((p) => (
+              <p key={p} className="lead">
+                {p}
+              </p>
+            ))}
+            <div className="flex flex-wrap gap-3 pt-3">
+              <a href={profile.cv} download className="btn btn-primary">
+                Download CV
+              </a>
+              <a href={profile.cv} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                View CV
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.06}>
+            <div className="card px-6 py-2">
+              {about.highlights.map((item, i) => (
+                <div key={item.title} className="py-4 border-t border-white/[0.08] first:border-t-0">
+                  {i === 0 ? (
+                    <h3 className="text-xl font-medium leading-7 text-ink-text">{item.title}</h3>
+                  ) : (
+                    <div className="label">{item.title}</div>
+                  )}
+                  <p className="mt-1 text-[15px] leading-6 text-ink-text2">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal className="mt-12">
+          <div className="card px-6 py-2">
+            {stats.map((s) => (
+              <div key={s.label} className="ledger-row">
+                <span className="text-[15px] text-ink-text2">{s.label}</span>
+                <span className="ledger-leader" aria-hidden="true" />
+                <CountUp value={s.value} className="mono text-xl font-medium text-ink-text" />
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
-      <div className="flex flex-col gap-[40px]">
-        <motion.span
-          className="text-center text-white max-w-[840px] font-[Inter] text-[17px] leading-6"
-          variants={aboutVariants}
-        >
-          Hi there! I'm Tobiloba, a software engineer specializing in full-stack
-          development, system optimization, application architecture, and
-          DevOps. With a passion for building robust and scalable solutions, I'm
-          dedicated to helping businesses enhance their digital presence and
-          streamline their operations in today's technology-driven world.
-        </motion.span>
-        <motion.span
-          className="text-center text-white max-w-[840px] font-[Inter] text-[17px] leading-6"
-          variants={aboutVariants}
-        >
-          I bring a blend of technical expertise, hands-on experience, and a
-          commitment to clear communication to every project. Whether it's
-          designing efficient systems, optimizing performance, or implementing
-          scalable solutions, I'm here to help you harness the full potential of
-          technology to achieve your goals.
-        </motion.span>
-        <motion.span
-          className="text-center text-white max-w-[840px] font-[Inter] text-[17px] leading-6"
-          variants={aboutVariants}
-        >
-          Let's work together to transform your ideas into robust and scalable
-          software solutions that drive real results. Get in touch, and let's
-          start unlocking the power of technology for your business today!
-        </motion.span>
-      </div>
-      <div className="flex flex-wrap gap-4">
-        <motion.a
-          href="/cv/Oluwatobiloba-Oluwadare CV.pdf" // Correct path
-          target="_blank" // Opens in a new tab
-          whileHover={{
-            scale: 1.05,
-            backgroundColor: "#4FC3F7",
-            color: "#000",
-          }}
-          className="font-[Montserrat] w-fit my-3 border text-white cursor-pointer border-[#4FC3F7] py-[18px] px-[50px] rounded-[75px] transition duration-300 ease-in-out"
-        >
-          View CV
-        </motion.a>
-        <motion.a
-          href="/cv/Oluwatobiloba-Oluwadare CV.pdf" // Correct path
-          download="Oluwatobiloba-Oluwadare CV.pdf"
-          whileHover={{
-            scale: 1.05,
-            backgroundColor: "#4FC3F7",
-            color: "#000",
-          }}
-          className="font-[Montserrat] w-fit my-3 border text-white cursor-pointer border-[#4FC3F7] py-[18px] px-[50px] rounded-[75px] transition duration-300 ease-in-out"
-        >
-          Download CV
-        </motion.a>
-      </div>
-    </motion.div>
+    </section>
   );
 };
 

@@ -1,50 +1,32 @@
-import Image from "next/image";
+"use client";
+
 import React from "react";
-import gmailIcon from "../public/assets/gmailIcon.svg";
-import linkedinIcon from "../public/assets/linkedinIcon.svg";
-import instaIcon from "../public/assets/instaIcon.svg";
-import twitIcon from "../public/assets/twitIcon.svg";
-import githubIcon from "../public/assets/githubIcon.svg";
+import { profile, links } from "@/data/portfolio";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
-    <>
-      <div className="flex flex-col gap-[40px] items-center  xsm:px-[25px] w-full ">
-        <div className="flex w-full items-center justify-around">
-          <span className="foot-des md:max-w-[630px]">
-            Let's Work Together!{`  `}
-          </span>
-          {/* <a
-            href=" tobidechamp15@gmail.com"
-            className="gmail flex flex-wrap gap-2 items-center border border-gray-300 p-2 rounded-xl"
-          >
-            <Image src={gmailIcon} />
-            tobidechamp15@gmail.com
-          </a> */}
-        </div>
-      </div>
-      <hr className="w-full border-[#484E53] my-7" />
-      <div className=" flex flex-wrap justify-around w-full my-[36px]">
-        <span className="reserved">@2024 all rights reserved.</span>
-        <div className="flex gap-3 items-center">
-          <a href="https://www.linkedin.com/in/oluwatobiloba-oluwadare-ab317b365/">
-            <Image src={linkedinIcon} />
+    <footer className="border-t border-white/[0.08] bg-ink-deep">
+      <div className="container-x py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-ink-muted">
+          © {year} {profile.name}
+        </p>
+        <div className="flex items-center gap-6 text-sm text-ink-text2">
+          <a href={links.github} target="_blank" rel="noopener noreferrer" className="hover:text-ink-text transition-colors duration-150">
+            GitHub
           </a>
-          <a href="https://www.instagram.com/de_champ__/">
-            <Image src={instaIcon} />
+          <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-ink-text transition-colors duration-150">
+            LinkedIn
           </a>
-          <a href="https://x.com/tobidechamp15">
-            <Image src={twitIcon} />
+          <a href={links.x} target="_blank" rel="noopener noreferrer" className="hover:text-ink-text transition-colors duration-150">
+            X
           </a>
-          <a
-            href="https://github.com/tobidechamp15"
-            style={{ clipPath: "circle(50% at 50% 50%)" }}
-          >
-            <Image src={githubIcon} className="w-[32px] bg-[#aeb0b4]" />
+          <a href={links.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-ink-text transition-colors duration-150">
+            Instagram
           </a>
         </div>
       </div>
-    </>
+    </footer>
   );
 };
 
